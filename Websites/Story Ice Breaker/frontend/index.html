@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Choice Story</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="title">
+        <h1 id="storyTitle">Choice Story</h1>
+        <p class="subtitle" id="storySubtitle">Choose your path.</p>
+      </div>
+
+      <div class="actions">
+        <button id="btnBack" class="ghost" title="Go back (1 step)">Back</button>
+        <button id="btnRestart" class="ghost">Restart</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="meta">
+        <span id="nodeTag" class="tag">SCENE</span>
+        <span id="progress" class="progress">0 steps</span>
+      </div>
+
+      <h2 id="nodeTitle" class="nodeTitle"></h2>
+      <p id="nodeText" class="nodeText"></p>
+
+      <div id="choices" class="choices"></div>
+
+      <div id="endingBox" class="ending hidden">
+        <p class="endingTitle">Ending reached.</p>
+        <p class="endingHint">You can restart or go back and try a different choice.</p>
+      </div>
+    </section>
+
+    
+  </main>
+
+   <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="story.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

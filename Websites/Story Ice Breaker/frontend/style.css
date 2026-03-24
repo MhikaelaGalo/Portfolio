@@ -1,0 +1,120 @@
+:root{
+  --bg:#0f1220;
+  --card:#161a2e;
+  --text:#e7e9ff;
+  --muted:#aab0e6;
+  --btn:#2a2f55;
+  --btnHover:#363d73;
+  --tag:#3b82f6;
+  --danger:#ef4444;
+  --ok:#22c55e;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1000px 600px at 20% 10%, #242a5a 0%, var(--bg) 55%);
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+.app{width:min(900px, 100%);}
+
+.topbar{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:14px;
+}
+.title h1{margin:0; font-size:22px;}
+.subtitle{margin:6px 0 0; color:var(--muted); font-size:14px;}
+
+.actions{display:flex; gap:10px;}
+button{
+  border:none;
+  cursor:pointer;
+  padding:10px 12px;
+  border-radius:12px;
+  font-weight:600;
+}
+.ghost{
+  background:transparent;
+  color:var(--text);
+  border:1px solid rgba(231,233,255,0.2);
+}
+.ghost:hover{border-color:rgba(231,233,255,0.45);}
+
+.card{
+  background:rgba(22,26,46,0.92);
+  border:1px solid rgba(231,233,255,0.12);
+  border-radius:18px;
+  padding:18px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+}
+
+.meta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:12px;
+}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  padding:4px 10px;
+  border-radius:999px;
+  background:rgba(59,130,246,0.2);
+  border:1px solid rgba(59,130,246,0.35);
+  color:#cfe5ff;
+  font-size:12px;
+  letter-spacing:0.4px;
+}
+.progress{color:var(--muted); font-size:12px;}
+
+.nodeTitle{margin:8px 0 8px; font-size:18px;}
+.nodeText{
+  margin:0 0 14px;
+  color:var(--text);
+  line-height:1.55;
+  white-space:pre-wrap; /* lets you use line breaks in story text */
+}
+
+.choices{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.choiceBtn{
+  background:var(--btn);
+  color:var(--text);
+  text-align:left;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid rgba(231,233,255,0.12);
+}
+.choiceBtn:hover{
+  background:var(--btnHover);
+  border-color:rgba(231,233,255,0.22);
+}
+
+.ending{
+  margin-top:14px;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid rgba(34,197,94,0.25);
+  background: rgba(34,197,94,0.10);
+}
+.endingTitle{margin:0; font-weight:800;}
+.endingHint{margin:6px 0 0; color:var(--muted);}
+
+.hidden{display:none;}
+.footer{margin-top:10px; color:var(--muted);}
+code{color:#cfe5ff;}

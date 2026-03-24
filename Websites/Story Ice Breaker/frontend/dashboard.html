@@ -1,0 +1,2115 @@
+<!-- /index.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AlalayPH – Safer Hiring</title>
+
+    <!-- Font similar to the mockups -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg-cream: #f7f0e6;
+        --bg-mint: #eaf5ee;
+        --bg-mint-2: #e5f2ea;
+        --text: #1f3a2f;
+        --muted: #5b6e66;
+
+        --brand: #35c27f;
+        --brand-2: #5bd39b;
+        --brand-dark: #1f9f66;
+
+        --card: rgba(255, 255, 255, 0.55);
+        --card-2: rgba(255, 255, 255, 0.7);
+        --border: rgba(31, 58, 47, 0.12);
+
+        --shadow: 0 14px 40px rgba(22, 45, 35, 0.08);
+        --shadow-soft: 0 10px 28px rgba(22, 45, 35, 0.06);
+
+        --radius-lg: 22px;
+        --radius-md: 16px;
+        --radius-sm: 12px;
+
+        --container: 1120px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+          Arial, sans-serif;
+        color: var(--text);
+        background: var(--bg-mint);
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        max-width: var(--container);
+        margin: 0 auto;
+        padding: 0 22px;
+      }
+
+      /* Header */
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(247, 240, 230, 0.75);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(31, 58, 47, 0.08);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+        gap: 16px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .brand svg {
+        width: 26px;
+        height: 26px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: rgba(31, 58, 47, 0.75);
+        font-weight: 500;
+        font-size: 14px;
+      }
+
+      .nav a {
+        padding: 8px 6px;
+        border-radius: 10px;
+      }
+
+      .nav a:hover {
+        background: rgba(53, 194, 127, 0.08);
+        color: rgba(31, 58, 47, 0.95);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 18px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        user-select: none;
+        transition: transform 0.06s ease, filter 0.12s ease;
+      }
+
+      .btn:active {
+        transform: translateY(1px);
+      }
+
+      .btn-primary {
+        background: linear-gradient(180deg, var(--brand-2), var(--brand));
+        color: #fff;
+        box-shadow: 0 10px 26px rgba(53, 194, 127, 0.25);
+      }
+
+      .btn-primary:hover {
+        filter: brightness(0.98);
+      }
+
+      .btn-ghost {
+        background: rgba(255, 255, 255, 0.55);
+        border-color: rgba(31, 58, 47, 0.12);
+        color: rgba(31, 58, 47, 0.9);
+      }
+
+      .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.7);
+      }
+
+      .btn-pill {
+        padding: 10px 16px;
+        font-size: 13px;
+      }
+
+      /* Sections */
+      section {
+        padding: 78px 0;
+      }
+
+      .section-cream {
+        background: var(--bg-cream);
+      }
+
+      .section-mint {
+        background: var(--bg-mint);
+      }
+
+      .section-mint-2 {
+        background: var(--bg-mint-2);
+      }
+
+      .section-head {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto 34px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(31, 58, 47, 0.65);
+        font-weight: 700;
+      }
+
+      .h2 {
+        margin: 10px 0 10px;
+        font-size: 36px;
+        letter-spacing: -0.04em;
+        line-height: 1.15;
+      }
+
+      .lead {
+        margin: 0;
+        color: rgba(31, 58, 47, 0.68);
+        font-size: 14px;
+      }
+
+      /* Hero */
+      .hero {
+        min-height: calc(100vh - 72px);
+        display: flex;
+        align-items: center;
+        padding: 60px 0;
+        background: radial-gradient(
+            1200px 700px at 68% 40%,
+            rgba(53, 194, 127, 0.22),
+            transparent 58%
+          ),
+          radial-gradient(
+            800px 500px at 15% 80%,
+            rgba(53, 194, 127, 0.09),
+            transparent 55%
+          ),
+          linear-gradient(160deg, #c8e8d2 0%, #d8f0e2 35%, var(--bg-mint) 70%, #eaf5ee 100%);
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 44px;
+        align-items: center;
+        width: 100%;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(31, 58, 47, 0.1);
+        color: rgba(31, 58, 47, 0.72);
+        font-weight: 600;
+        font-size: 13px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .hero h1 {
+        margin: 14px 0 12px;
+        font-size: 56px;
+        line-height: 1.05;
+        letter-spacing: -0.05em;
+      }
+
+      .hero .highlight {
+        color: var(--brand);
+        text-shadow: 0 12px 30px rgba(53, 194, 127, 0.18);
+      }
+
+      .hero p {
+        margin: 0 0 20px;
+        max-width: 560px;
+        color: rgba(31, 58, 47, 0.68);
+        font-size: 14px;
+      }
+
+      .hero-actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 20px;
+      }
+
+      .stats {
+        display: flex;
+        gap: 38px;
+        align-items: baseline;
+        margin-top: 10px;
+      }
+
+      .stat {
+        display: grid;
+        gap: 2px;
+      }
+
+      .stat b {
+        font-size: 18px;
+        letter-spacing: -0.02em;
+        color: rgba(53, 194, 127, 0.95);
+      }
+
+      .stat span {
+        font-size: 12px;
+        color: rgba(31, 58, 47, 0.6);
+        font-weight: 600;
+      }
+
+      .hero-illu {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.45);
+        border: 1px solid rgba(31, 58, 47, 0.12);
+        border-radius: 26px;
+        box-shadow: var(--shadow);
+        padding: 24px;
+        display: grid;
+        place-items: center;
+        min-height: 320px;
+      }
+
+      /* Cards / Grids */
+      .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-soft);
+        padding: 18px;
+      }
+
+      .card h3 {
+        margin: 12px 0 6px;
+        font-size: 14px;
+        letter-spacing: -0.02em;
+      }
+
+      .card p {
+        margin: 0;
+        color: rgba(31, 58, 47, 0.65);
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      .icon-pill {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        background: linear-gradient(180deg, rgba(91, 211, 155, 0.95), #33c27d);
+        display: grid;
+        place-items: center;
+        box-shadow: 0 14px 34px rgba(53, 194, 127, 0.18);
+      }
+
+      .icon-pill svg {
+        width: 20px;
+        height: 20px;
+        stroke: #fff;
+      }
+
+      /* Worker cards */
+      .worker {
+        padding: 18px;
+      }
+
+      .worker-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        color: #fff;
+        font-weight: 800;
+        background: linear-gradient(180deg, rgba(91, 211, 155, 0.95), #33c27d);
+      }
+
+      .verified {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(53, 194, 127, 0.1);
+        border: 1px solid rgba(53, 194, 127, 0.22);
+        color: rgba(31, 58, 47, 0.75);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .verified svg {
+        width: 14px;
+        height: 14px;
+        stroke: rgba(31, 58, 47, 0.65);
+      }
+
+      .worker h4 {
+        margin: 12px 0 2px;
+        font-size: 15px;
+        letter-spacing: -0.02em;
+      }
+
+      .worker .role {
+        margin: 0 0 10px;
+        font-size: 12px;
+        color: rgba(31, 58, 47, 0.58);
+        font-weight: 600;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 8px 0 12px;
+      }
+
+      .tag {
+        font-size: 11px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(31, 58, 47, 0.1);
+        background: rgba(31, 58, 47, 0.05);
+        color: rgba(31, 58, 47, 0.7);
+        font-weight: 700;
+      }
+
+      .meta {
+        display: grid;
+        gap: 8px;
+        margin-top: 6px;
+        color: rgba(31, 58, 47, 0.6);
+        font-size: 12px;
+      }
+
+      .meta-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .meta-row svg {
+        width: 14px;
+        height: 14px;
+        stroke: rgba(31, 58, 47, 0.55);
+      }
+
+      .worker-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 14px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(31, 58, 47, 0.1);
+        font-size: 12px;
+        font-weight: 700;
+        color: rgba(31, 58, 47, 0.72);
+      }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: #33c27d;
+      }
+
+      .dot.off {
+        background: rgba(31, 58, 47, 0.25);
+      }
+
+      /* Job cards */
+      .job {
+        padding: 18px;
+      }
+
+      .job-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 800;
+        background: rgba(53, 194, 127, 0.1);
+        border: 1px solid rgba(53, 194, 127, 0.22);
+        color: rgba(31, 58, 47, 0.7);
+      }
+
+      .job h4 {
+        margin: 12px 0 2px;
+        font-size: 16px;
+        letter-spacing: -0.02em;
+      }
+
+      .job .employer {
+        margin: 0 0 10px;
+        font-size: 12px;
+        color: rgba(31, 58, 47, 0.58);
+        font-weight: 600;
+      }
+
+      .job-meta {
+        display: grid;
+        gap: 8px;
+        margin: 10px 0 10px;
+        font-size: 12px;
+        color: rgba(31, 58, 47, 0.62);
+      }
+
+      .job .apply {
+        width: 100%;
+        margin-top: 10px;
+        justify-content: center;
+        padding: 12px 16px;
+        font-size: 13px;
+      }
+
+      /* Split section (Secure comms / Agreements) */
+      .split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 26px;
+        align-items: center;
+      }
+
+      .feature-list {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .feature {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 12px;
+        align-items: start;
+      }
+
+      .feature h4 {
+        margin: 0 0 4px;
+        font-size: 13px;
+        letter-spacing: -0.02em;
+      }
+
+      .feature p {
+        margin: 0;
+        font-size: 12px;
+        color: rgba(31, 58, 47, 0.62);
+      }
+
+      .mock-chat {
+        background: var(--card-2);
+        border: 1px solid rgba(31, 58, 47, 0.12);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+        padding: 16px;
+        max-width: 420px;
+        margin-left: auto;
+      }
+
+      .chat-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 10px 12px;
+        border-bottom: 1px solid rgba(31, 58, 47, 0.1);
+      }
+
+      .chat-header .name {
+        font-weight: 800;
+        font-size: 13px;
+        letter-spacing: -0.01em;
+      }
+
+      .chat-header .online {
+        font-size: 12px;
+        color: rgba(53, 194, 127, 0.9);
+        font-weight: 700;
+      }
+
+      .bubble {
+        margin: 12px 8px;
+        padding: 12px 12px;
+        border-radius: 14px;
+        font-size: 12px;
+        color: rgba(31, 58, 47, 0.72);
+        border: 1px solid rgba(31, 58, 47, 0.08);
+      }
+
+      .bubble.left {
+        background: rgba(31, 58, 47, 0.06);
+        border-top-left-radius: 10px;
+        max-width: 82%;
+      }
+
+      .bubble.right {
+        background: rgba(53, 194, 127, 0.1);
+        margin-left: auto;
+        border-top-right-radius: 10px;
+        max-width: 82%;
+      }
+
+      .chat-input {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 8px 6px;
+        border-top: 1px solid rgba(31, 58, 47, 0.1);
+      }
+
+      .input {
+        flex: 1;
+        height: 42px;
+        border-radius: 999px;
+        border: 1px solid rgba(31, 58, 47, 0.12);
+        background: rgba(31, 58, 47, 0.05);
+        padding: 0 14px;
+        font-size: 12px;
+        color: rgba(31, 58, 47, 0.7);
+        display: flex;
+        align-items: center;
+      }
+
+      .send {
+        width: 42px;
+        height: 42px;
+        border-radius: 999px;
+        border: 0;
+        background: linear-gradient(180deg, rgba(91, 211, 155, 0.95), #33c27d);
+        display: grid;
+        place-items: center;
+        box-shadow: 0 12px 26px rgba(53, 194, 127, 0.18);
+        cursor: pointer;
+      }
+
+      .send svg {
+        width: 18px;
+        height: 18px;
+        stroke: #fff;
+      }
+
+      /* Agreement card */
+      .agreement {
+        background: rgba(255, 255, 255, 0.62);
+        border: 1px solid rgba(31, 58, 47, 0.12);
+        border-radius: 22px;
+        padding: 18px;
+        box-shadow: var(--shadow);
+        max-width: 520px;
+        margin-left: auto;
+      }
+
+      .agreement-head {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-bottom: 10px;
+      }
+
+      .agreement-head h4 {
+        margin: 0;
+        font-size: 14px;
+        letter-spacing: -0.02em;
+      }
+
+      .agreement-head span {
+        font-size: 12px;
+        color: rgba(31, 58, 47, 0.6);
+        font-weight: 700;
+      }
+
+      .agreement-row {
+        display: grid;
+        grid-template-columns: 24px 1fr;
+        gap: 12px;
+        padding: 12px 0;
+        border-top: 1px solid rgba(31, 58, 47, 0.1);
+      }
+
+      .agreement-row b {
+        display: block;
+        font-size: 12px;
+        letter-spacing: -0.01em;
+      }
+
+      .agreement-row small {
+        display: block;
+        font-size: 12px;
+        color: rgba(31, 58, 47, 0.6);
+        font-weight: 600;
+        margin-top: 2px;
+      }
+
+      .agreement-row svg {
+        width: 18px;
+        height: 18px;
+        stroke: rgba(53, 194, 127, 0.95);
+      }
+
+      /* CTA banner */
+      .cta-wrap {
+        padding-top: 0;
+      }
+
+      .cta {
+        background: linear-gradient(180deg, #58d3a0, #39c982);
+        border-radius: 26px;
+        padding: 56px 24px;
+        text-align: center;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 22px 70px rgba(53, 194, 127, 0.35);
+      }
+
+      .cta::before,
+      .cta::after {
+        content: "";
+        position: absolute;
+        width: 280px;
+        height: 280px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        filter: blur(0px);
+      }
+
+      .cta::before {
+        left: -80px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .cta::after {
+        right: -120px;
+        top: -80px;
+      }
+
+      .cta h3 {
+        margin: 10px 0 8px;
+        font-size: 36px;
+        letter-spacing: -0.04em;
+      }
+
+      .cta p {
+        margin: 0 auto 22px;
+        max-width: 520px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .cta-actions {
+        display: inline-flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .btn-white {
+        background: rgba(255, 255, 255, 0.92);
+        color: rgba(31, 58, 47, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .btn-outline-white {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+      }
+
+      /* btn icon sizing */
+      .btn svg {
+        width: 16px;
+        height: 16px;
+        stroke: currentColor;
+        flex-shrink: 0;
+      }
+
+      .btn-primary svg {
+        stroke: #fff;
+      }
+
+      /* Footer */
+      footer {
+        background: #2e6b52;
+        color: rgba(255, 255, 255, 0.85);
+        padding: 56px 0 22px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.2fr repeat(3, 1fr);
+        gap: 30px;
+        padding-bottom: 22px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .footer-brand {
+        display: grid;
+        gap: 10px;
+      }
+
+      .footer-brand .brandline {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: #fff;
+      }
+
+      .footer-brand p {
+        margin: 0;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.75);
+        max-width: 320px;
+      }
+
+      .footer-col h5 {
+        margin: 0 0 10px;
+        font-size: 13px;
+        color: #fff;
+        letter-spacing: -0.01em;
+      }
+
+      .footer-col a {
+        display: block;
+        padding: 6px 0;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.75);
+      }
+
+      .footer-col a:hover {
+        color: rgba(255, 255, 255, 0.95);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 18px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Helpers */
+      .muted {
+        color: rgba(31, 58, 47, 0.68);
+      }
+
+      .spacer-sm {
+        height: 10px;
+      }
+
+      /* Responsive */
+      @media (max-width: 1020px) {
+        .hero {
+          min-height: calc(100vh - 72px);
+          padding: 52px 0;
+        }
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-illu {
+          min-height: 260px;
+        }
+        .grid-4 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+        .split {
+          grid-template-columns: 1fr;
+        }
+        .mock-chat,
+        .agreement {
+          margin: 0;
+          max-width: 100%;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .nav {
+          display: none;
+        }
+        .hero {
+          min-height: calc(100vh - 72px);
+          padding: 40px 0;
+        }
+        .hero h1 {
+          font-size: 44px;
+        }
+        .hero-illu {
+          display: none;
+        }
+        .stats {
+          gap: 22px;
+          flex-wrap: wrap;
+        }
+        .grid-4 {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-inner">
+          <a class="brand" href="#">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M12 2l7 4v7c0 5-3 8-7 9-4-1-7-4-7-9V6l7-4z"
+                stroke="rgba(53, 194, 127, 0.95)"
+                stroke-width="1.8"
+              />
+              <path
+                d="M9.5 12.2l1.8 1.8 3.6-4"
+                stroke="rgba(53, 194, 127, 0.95)"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>AlalayPH</span>
+          </a>
+
+          <nav class="nav" aria-label="Primary">
+            <a href="#about">About</a>
+            <a href="#workers">Workers</a>
+            <a href="#jobs">Jobs</a>
+            <a href="#training">Training</a>
+            <a href="#safety">Safety</a>
+            <a href="#support">Support</a>
+          </nav>
+
+          <a class="btn btn-primary btn-pill" href="#join">Join Now</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="about">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <span class="hero-badge">
+              <!-- Sparkle / stars icon replacing ✨ -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="stroke:rgba(53,194,127,0.9);flex-shrink:0;">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              Trusted Care for Every Corner
+            </span>
+
+            <h1>
+              Safer Hiring for<br />
+              <span class="highlight">Domestic Workers</span> &amp;<br />
+              Households
+            </h1>
+
+            <p>
+              AlalayPH connects Filipino families with verified, skilled domestic workers
+              through organized and secure job matching — protecting both workers and employers.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#join">
+                Get Started
+                <!-- Arrow right icon replacing → -->
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <a class="btn btn-ghost" href="#problem">Learn More</a>
+            </div>
+
+            <div class="stats" aria-label="Key stats">
+              <div class="stat">
+                <b>100%</b>
+                <span>Verified Workers</span>
+              </div>
+              <div class="stat">
+                <b>Safe</b>
+                <span>Communication</span>
+              </div>
+              <div class="stat">
+                <b>Secure</b>
+                <span>Agreements</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-illu" aria-label="Illustration">
+            <!-- Simple inline SVG illustration (placeholder) -->
+            <svg
+              viewBox="0 0 520 360"
+              width="100%"
+              height="100%"
+              role="img"
+              aria-label="Handshake illustration"
+            >
+              <defs>
+                <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#63d7a6" stop-opacity="0.95" />
+                  <stop offset="1" stop-color="#33c27d" stop-opacity="0.95" />
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" width="520" height="360" rx="28" fill="rgba(53,194,127,0.06)" />
+              <circle cx="260" cy="178" r="118" fill="rgba(53,194,127,0.08)" />
+              <circle cx="410" cy="70" r="50" fill="rgba(53,194,127,0.08)" />
+              <circle cx="95" cy="288" r="62" fill="rgba(53,194,127,0.08)" />
+              <g transform="translate(120,90)">
+                <rect x="150" y="60" width="60" height="70" rx="14" fill="url(#g1)" opacity="0.9" />
+                <path
+                  d="M180 75l10 8 14-18"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M78 140c30-18 60-18 90 0l20 12c10 6 10 18 0 24-8 5-18 4-26-1l-14-10"
+                  fill="none"
+                  stroke="rgba(31,58,47,0.65)"
+                  stroke-width="10"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M262 140c-30-18-60-18-90 0l-20 12c-10 6-10 18 0 24 8 5 18 4 26-1l14-10"
+                  fill="none"
+                  stroke="rgba(31,58,47,0.65)"
+                  stroke-width="10"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M140 178l18 14c14 10 34 10 48 0l18-14"
+                  fill="none"
+                  stroke="rgba(31,58,47,0.65)"
+                  stroke-width="10"
+                  stroke-linecap="round"
+                />
+                <circle cx="72" cy="108" r="34" fill="rgba(53,194,127,0.15)" />
+                <circle cx="270" cy="108" r="34" fill="rgba(53,194,127,0.15)" />
+                <rect x="44" y="142" width="88" height="84" rx="18" fill="rgba(53,194,127,0.12)" />
+                <rect x="230" y="142" width="88" height="84" rx="18" fill="rgba(53,194,127,0.12)" />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section-cream" id="problem">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">THE PROBLEM</div>
+          <div class="h2">Why a Safer Platform is Needed</div>
+          <p class="lead">
+            Most domestic worker hirings in the Philippines happen through informal channels —
+            Facebook posts, group chats, referrals, and unregistered agents. This puts everyone at risk.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <div class="card">
+            <div class="icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M7 11h10M7 7h6M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3>Facebook &amp; Group Chat Hiring</h3>
+            <p>Hiring through social media and informal chats offers no protection or accountability.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 2l7 4v7c0 5-3 8-7 9-4-1-7-4-7-9V6l7-4z"
+                  stroke-width="1.8"
+                />
+                <path
+                  d="M9 12l2 2 4-5"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3>Scams &amp; Fake Identities</h3>
+            <p>Without verification, both workers and employers risk fraud and deception.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M7 3h10v18H7z"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9 7h6M9 11h6M9 15h4"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3>Unclear Job Agreements</h3>
+            <p>Informal hiring leads to misunderstandings about pay, duties, and schedules.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 7a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"
+                  stroke-width="1.8"
+                />
+                <path
+                  d="M4 21a8 8 0 0 1 16 0"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3>Unsafe Work Arrangements</h3>
+            <p>Workers often face unregulated conditions with no channels for reporting abuse.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verified Workers -->
+    <section class="section-mint-2" id="workers">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">VERIFIED WORKERS</div>
+          <div class="h2">Find Trustworthy, Skilled Workers</div>
+          <p class="lead">
+            Every worker on AlalayPH creates a verified profile with their skills, experience, and identity —
+            so you can hire with confidence.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <div class="card worker">
+            <div class="worker-top">
+              <div class="avatar">MS</div>
+              <div class="verified">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2l7 4v7c0 5-3 8-7 9-4-1-7-4-7-9V6l7-4z"
+                    stroke-width="1.8"
+                  />
+                  <path
+                    d="M9 12l2 2 4-5"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Verified
+              </div>
+            </div>
+            <h4>Maria Santos</h4>
+            <p class="role">Housekeeper</p>
+
+            <div class="tags">
+              <span class="tag">Cleaning</span>
+              <span class="tag">Laundry</span>
+              <span class="tag">Cooking</span>
+            </div>
+
+            <div class="meta">
+              <div class="meta-row">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 8v5l3 2" stroke-width="1.8" stroke-linecap="round" />
+                  <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke-width="1.8" />
+                </svg>
+                5 years experience
+              </div>
+              <div class="meta-row">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 21s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11z"
+                    stroke-width="1.8"
+                  />
+                  <path d="M12 10.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" stroke-width="1.8" />
+                </svg>
+                Manila
+              </div>
+              <div class="meta-row">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 17.3l-6.2 3.3 1.2-6.9L2 8.9l6.9-1L12 1.7l3.1 6.2 6.9 1-5 4.8 1.2 6.9z"
+                    stroke-width="1.6"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                4.9
+              </div>
+            </div>
+
+            <div class="worker-bottom">
+              <span class="status"><span class="dot"></span> Available</span>
+              <span style="color: rgba(53,194,127,0.95)">View Profile</span>
+            </div>
+          </div>
+
+          <div class="card worker">
+            <div class="worker-top">
+              <div class="avatar">RD</div>
+              <div class="verified">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2l7 4v7c0 5-3 8-7 9-4-1-7-4-7-9V6l7-4z" stroke-width="1.8" />
+                  <path
+                    d="M9 12l2 2 4-5"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Verified
+              </div>
+            </div>
+            <h4>Rosa Dela Cruz</h4>
+            <p class="role">Childcare Specialist</p>
+
+            <div class="tags">
+              <span class="tag">Childcare</span>
+              <span class="tag">Tutoring</span>
+              <span class="tag">First Aid</span>
+            </div>
+
+            <div class="meta">
+              <div class="meta-row">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 8v5l3 2" stroke-width="1.8" stroke-linecap="round" />
+                  <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke-width="1.8" />
+                </svg>
+                8 years experience
+              </div>
+              <div class="meta-row">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 21s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11z"
+                    stroke-width="1.8"
+                  />
+                  <path d="M12 10.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" stroke-width="1.8" />
+                </svg>
+                Quezon City
+              </div>
+              <div class="meta-row">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 17.3l-6.2 3.3 1.2-6.9L2 8.9l6.9-1L12 1.7l3.1 6.2 6.9 1-5 4.8 1.2 6.9z"
+                    stroke-width="1.6"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                5
+              </div>
+            </div>
+
+            <div class="worker-bottom">
+              <span class="status"><span class="dot"></span> Available</span>
+              <span style="color: rgba(53,194,127,0.95)">View Profile</span>
+            </div>
+          </div>
+
+          <div class="card worker">
+            <div class="worker-top">
+              <div class="avatar">AR</div>
+              <div class="verified">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2l7 4v7c0 5-3 8-7 9-4-1-7-4-7-9V6l7-4z" stroke-width="1.8" />
+                  <path
+                    d="M9 12l2 2 4-5"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Verified
+              </div>
+            </div>
+            <h4>Ana Reyes</h4>
+            <p class="role">Elderly Caregiver</p>
+
+            <div class="tags">
+              <span class="tag">Elder Care</span>
+              <span class="tag">Medication</span>
+              <span class="tag">Mobility</span>
+            </div>
+
+            <div class="meta">
+              <div class="meta-row">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 8v5l3 2" stroke-width="1.8" stroke-linecap="round" />
+                  <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke-width="1.8" />
+                </svg>
+                6 years experience
+              </div>
+              <div class="meta-row">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 21s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11z"
+                    stroke-width="1.8"
+                  />
+                  <path d="M12 10.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" stroke-width="1.8" />
+                </svg>
+                Cebu
+              </div>
+              <div class="meta-row">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 17.3l-6.2 3.3 1.2-6.9L2 8.9l6.9-1L12 1.7l3.1 6.2 6.9 1-5 4.8 1.2 6.9z"
+                    stroke-width="1.6"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                4.8
+              </div>
+            </div>
+
+            <div class="worker-bottom">
+              <span class="status"><span class="dot off"></span> Unavailable</span>
+              <span style="color: rgba(53,194,127,0.95)">View Profile</span>
+            </div>
+          </div>
+
+          <div class="card worker">
+            <div class="worker-top">
+              <div class="avatar">LG</div>
+              <div class="verified">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2l7 4v7c0 5-3 8-7 9-4-1-7-4-7-9V6l7-4z" stroke-width="1.8" />
+                  <path
+                    d="M9 12l2 2 4-5"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Verified
+              </div>
+            </div>
+            <h4>Luz Garcia</h4>
+            <p class="role">All-Around Helper</p>
+
+            <div class="tags">
+              <span class="tag">Cooking</span>
+              <span class="tag">Cleaning</span>
+              <span class="tag">Childcare</span>
+            </div>
+
+            <div class="meta">
+              <div class="meta-row">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 8v5l3 2" stroke-width="1.8" stroke-linecap="round" />
+                  <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke-width="1.8" />
+                </svg>
+                3 years experience
+              </div>
+              <div class="meta-row">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 21s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11z"
+                    stroke-width="1.8"
+                  />
+                  <path d="M12 10.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" stroke-width="1.8" />
+                </svg>
+                Davao
+              </div>
+              <div class="meta-row">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 17.3l-6.2 3.3 1.2-6.9L2 8.9l6.9-1L12 1.7l3.1 6.2 6.9 1-5 4.8 1.2 6.9z"
+                    stroke-width="1.6"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                4.7
+              </div>
+            </div>
+
+            <div class="worker-bottom">
+              <span class="status"><span class="dot"></span> Available</span>
+              <span style="color: rgba(53,194,127,0.95)">View Profile</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Job matching -->
+    <section class="section-cream" id="jobs">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">JOB MATCHING</div>
+          <div class="h2">Organized &amp; Verified Job Matching</div>
+          <p class="lead">
+            Employers post jobs, workers apply, and the platform matches them based on skills and needs —
+            structured, transparent, and fair.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card job">
+            <div class="job-top">
+              <span class="pill">Full-time</span>
+              <span style="font-size:12px;color:rgba(31,58,47,0.5);font-weight:700;">2 days ago</span>
+            </div>
+            <h4>Live-in Housekeeper</h4>
+            <p class="employer">Garcia Family</p>
+
+            <div class="job-meta">
+              <div class="meta-row">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 21s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11z"
+                    stroke-width="1.8"
+                  />
+                  <path d="M12 10.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" stroke-width="1.8" />
+                </svg>
+                Makati City
+              </div>
+              <div class="meta-row">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M4 7h16v10H4z"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                  />
+                  <path d="M8 7V5h8v2" stroke-width="1.8" />
+                </svg>
+                ₱8,000 - ₱12,000/mo
+              </div>
+            </div>
+
+            <div class="tags">
+              <span class="tag">Cleaning</span>
+              <span class="tag">Cooking</span>
+              <span class="tag">Laundry</span>
+            </div>
+
+            <a class="btn btn-primary apply" href="#join">
+              Apply Now
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="card job">
+            <div class="job-top">
+              <span class="pill">Full-time</span>
+              <span style="font-size:12px;color:rgba(31,58,47,0.5);font-weight:700;">1 day ago</span>
+            </div>
+            <h4>Yaya for 2 Kids</h4>
+            <p class="employer">Santos Household</p>
+
+            <div class="job-meta">
+              <div class="meta-row">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 21s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11z"
+                    stroke-width="1.8"
+                  />
+                  <path d="M12 10.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" stroke-width="1.8" />
+                </svg>
+                Quezon City
+              </div>
+              <div class="meta-row">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M4 7h16v10H4z"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                  />
+                  <path d="M8 7V5h8v2" stroke-width="1.8" />
+                </svg>
+                ₱10,000 - ₱15,000/mo
+              </div>
+            </div>
+
+            <div class="tags">
+              <span class="tag">Childcare</span>
+              <span class="tag">Tutoring</span>
+            </div>
+
+            <a class="btn btn-primary apply" href="#join">
+              Apply Now
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="card job">
+            <div class="job-top">
+              <span class="pill">Part-time</span>
+              <span style="font-size:12px;color:rgba(31,58,47,0.5);font-weight:700;">Today</span>
+            </div>
+            <h4>Part-time Cleaner</h4>
+            <p class="employer">Reyes Residence</p>
+
+            <div class="job-meta">
+              <div class="meta-row">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 21s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11z"
+                    stroke-width="1.8"
+                  />
+                  <path d="M12 10.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" stroke-width="1.8" />
+                </svg>
+                Taguig
+              </div>
+              <div class="meta-row">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M4 7h16v10H4z"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                  />
+                  <path d="M8 7V5h8v2" stroke-width="1.8" />
+                </svg>
+                ₱500/day
+              </div>
+            </div>
+
+            <div class="tags">
+              <span class="tag">Cleaning</span>
+              <span class="tag">Organizing</span>
+            </div>
+
+            <a class="btn btn-primary apply" href="#join">
+              Apply Now
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Secure communication -->
+    <section class="section-mint-2" id="safety">
+      <div class="container">
+        <div class="split">
+          <div>
+            <div class="eyebrow">SECURE COMMUNICATION</div>
+            <div class="h2" style="text-align:left;margin-bottom:10px;">
+              Safe Conversations, Clear Agreements
+            </div>
+            <p class="lead" style="text-align:left;">
+              AlalayPH provides protected in-platform messaging so workers and employers can discuss work details safely —
+              preventing scams and misunderstandings.
+            </p>
+
+            <div class="feature-list">
+              <div class="feature">
+                <div class="icon-pill" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M6 10V8a6 6 0 0 1 12 0v2"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M6 10h12v10H6z"
+                      stroke-width="1.8"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h4>Encrypted Messaging</h4>
+                  <p>All conversations are private and secured within the platform.</p>
+                </div>
+              </div>
+
+              <div class="feature">
+                <div class="icon-pill" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M12 2l7 4v7c0 5-3 8-7 9-4-1-7-4-7-9V6l7-4z"
+                      stroke-width="1.8"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h4>Verified Identities</h4>
+                  <p>Only verified users can send and receive messages.</p>
+                </div>
+              </div>
+
+              <div class="feature">
+                <div class="icon-pill" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M4 12h16"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M7 16h10"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M7 8h10"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h4>Transparent Communication</h4>
+                  <p>Discuss job details, schedules, and expectations clearly.</p>
+                </div>
+              </div>
+
+              <div class="feature">
+                <div class="icon-pill" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M8 12h8M8 8h5M6 20h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h4>In-Platform Chat</h4>
+                  <p>No need for external apps — everything stays organized here.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mock-chat" aria-label="Chat mockup">
+            <div class="chat-header">
+              <div class="avatar" style="width:42px;height:42px;">GF</div>
+              <div style="display:grid;gap:2px;">
+                <div class="name">Garcia Family</div>
+                <div class="online">● Online</div>
+              </div>
+            </div>
+
+            <div class="bubble left">
+              Hi Maria! We saw your profile and we're interested. Can you start next week?
+              <div style="margin-top:6px;font-size:11px;color:rgba(31,58,47,0.45);font-weight:700;">10:30 AM</div>
+            </div>
+
+            <div class="bubble right">
+              Hello po! Yes, I'm available. What are the work details?
+              <div style="margin-top:6px;font-size:11px;color:rgba(31,58,47,0.45);font-weight:700;text-align:right;">10:32 AM</div>
+            </div>
+
+            <div class="bubble left">
+              Live-in, ₱10,000/mo, with own room. Rest day every Sunday.
+              <div style="margin-top:6px;font-size:11px;color:rgba(31,58,47,0.45);font-weight:700;">10:33 AM</div>
+            </div>
+
+            <div class="chat-input">
+              <div class="input">Type a message...</div>
+              <button class="send" aria-label="Send">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M22 2L11 13"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M22 2l-7 20-4-9-9-4 20-7z"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Training -->
+    <section class="section-cream" id="training">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">TRAINING &amp; SKILLS</div>
+          <div class="h2">Grow Your Skills, Earn Certifications</div>
+          <p class="lead">
+            AlalayPH supports worker development with learning resources and skill improvement programs —
+            not just hiring, but building careers.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <div class="card">
+            <div class="icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 2a7 7 0 0 0-7 7v3a5 5 0 0 0 5 5h4a5 5 0 0 0 5-5V9a7 7 0 0 0-7-7z" stroke-width="1.8" />
+                <path d="M9 21h6" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3>Childcare Essentials</h3>
+            <p><b>8 hours</b> &nbsp; • &nbsp; <span class="verified" style="padding:4px 10px;font-size:10px;">Certified</span></p>
+            <div class="spacer-sm"></div>
+            <p>Learn age-appropriate care, safety, and developmental activities.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 21s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11z" stroke-width="1.8" />
+                <path d="M12 10.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" stroke-width="1.8" />
+              </svg>
+            </div>
+            <h3>Elderly Care</h3>
+            <p><b>10 hours</b> &nbsp; • &nbsp; <span class="verified" style="padding:4px 10px;font-size:10px;">Certified</span></p>
+            <div class="spacer-sm"></div>
+            <p>Proper techniques for mobility assistance, medication, and companionship.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 20h16" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M7 20V8l5-4 5 4v12" stroke-width="1.8" stroke-linejoin="round" />
+                <path d="M10 12h4" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3>Professional Housekeeping</h3>
+            <p><b>6 hours</b> &nbsp; • &nbsp; <span class="verified" style="padding:4px 10px;font-size:10px;">Skilled</span></p>
+            <div class="spacer-sm"></div>
+            <p>Modern cleaning methods, organization, and home maintenance.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M8 2v8" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M16 2v8" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M6 10h12" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M6 10c0 6 4 12 6 12s6-6 6-12" stroke-width="1.8" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3>Home Cooking</h3>
+            <p><b>5 hours</b> &nbsp; • &nbsp; <span class="verified" style="padding:4px 10px;font-size:10px;">Skilled</span></p>
+            <div class="spacer-sm"></div>
+            <p>Meal planning, nutrition basics, and Filipino home cooking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Worker protection -->
+    <section class="section-mint-2">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">WORKER PROTECTION</div>
+          <div class="h2">Your Safety is Our Priority</div>
+          <p class="lead">
+            AlalayPH provides tools and channels to protect workers from unsafe conditions —
+            because everyone deserves a safe workplace.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <div class="card">
+            <div class="icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 2l7 4v7c0 5-3 8-7 9-4-1-7-4-7-9V6l7-4z" stroke-width="1.8" />
+                <path d="M12 8v5" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M12 17h.01" stroke-width="2.6" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3>Report Unsafe Employers</h3>
+            <p>Workers can flag abusive or dangerous employers directly through the platform.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 4h16v16H4z" stroke-width="1.8" />
+                <path d="M8 8h8M8 12h8M8 16h5" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3>Safety Guidelines</h3>
+            <p>Clear guidelines on workplace rights, safety standards, and emergency procedures.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" stroke-width="1.8" />
+                <path d="M8 9h8M8 13h6" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3>Complaint Channels</h3>
+            <p>Dedicated channels for filing complaints with proper documentation and follow-up.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M22 16.9v3a2 2 0 0 1-2.2 2 20 20 0 0 1-8.7-3.1 20 20 0 0 1-6.2-6.2A20 20 0 0 1 1.8 4.2 2 2 0 0 1 3.8 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.1a2 2 0 0 1 2.1-.5c1 .4 2 .7 3 .8a2 2 0 0 1 1.7 2z"
+                  stroke-width="1.6"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3>Emergency Support</h3>
+            <p>24/7 hotline and resources for workers in unsafe situations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clear agreements -->
+    <section class="section-cream">
+      <div class="container">
+        <div class="split">
+          <div>
+            <div class="eyebrow">CLEAR AGREEMENTS</div>
+            <div class="h2" style="text-align:left;margin-bottom:10px;">
+              Transparent Job Terms for Everyone
+            </div>
+            <p class="lead" style="text-align:left;">
+              AlalayPH ensures every job has documented terms — salary, duties, schedule, and benefits —
+              so both workers and employers know exactly what to expect.
+            </p>
+          </div>
+
+          <div class="agreement" aria-label="Work agreement mockup">
+            <div class="agreement-head">
+              <div class="icon-pill" aria-hidden="true" style="width:42px;height:42px;border-radius:14px;">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M7 3h10v18H7z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round" />
+                  <path d="M9 7h6M9 11h6M9 15h4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div>
+                <h4>Work Agreement</h4>
+                <span>Sample contract terms</span>
+              </div>
+            </div>
+
+            <div class="agreement-row">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M8 12h8M8 8h5M6 20h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z" stroke-width="1.8" />
+              </svg>
+              <div>
+                <b>Job Responsibilities</b>
+                <small>Housekeeping, cooking, childcare</small>
+              </div>
+            </div>
+
+            <div class="agreement-row">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 7h16v10H4z" stroke-width="1.8" stroke-linejoin="round" />
+                <path d="M8 7V5h8v2" stroke-width="1.8" />
+              </svg>
+              <div>
+                <b>Salary</b>
+                <small>₱10,000/month + bonuses</small>
+              </div>
+            </div>
+
+            <div class="agreement-row">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 8v5l3 2" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke-width="1.8" />
+              </svg>
+              <div>
+                <b>Work Schedule</b>
+                <small>6:00 AM - 6:00 PM, Mon-Sat</small>
+              </div>
+            </div>
+
+            <div class="agreement-row">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 20h16" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M7 20V8l5-4 5 4v12" stroke-width="1.8" stroke-linejoin="round" />
+              </svg>
+              <div>
+                <b>Living Arrangements</b>
+                <small>Private room, meals included</small>
+              </div>
+            </div>
+
+            <div class="agreement-row">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M7 4h10v4H7z" stroke-width="1.8" />
+                <path d="M5 10h14v10H5z" stroke-width="1.8" />
+                <path d="M8 13h3M8 16h4" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+              <div>
+                <b>Rest Days</b>
+                <small>Every Sunday + holidays</small>
+              </div>
+            </div>
+
+            <div class="agreement-row">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M20 7l-8 13-4-6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <div>
+                <b>Benefits</b>
+                <small>SSS, PhilHealth, 13th month</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform support -->
+    <section class="section-mint-2" id="support">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">PLATFORM SUPPORT</div>
+          <div class="h2">We're Here to Help</div>
+          <p class="lead">
+            AlalayPH provides comprehensive support tools for both workers and employers —
+            because a safer platform means better outcomes for everyone.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <div class="card">
+            <div class="icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10z" stroke-width="1.8" />
+                <path d="M12 8v5" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M12 16h.01" stroke-width="2.6" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3>Reporting Tools</h3>
+            <p>Easy-to-use forms for reporting issues, abuse, or violations.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14" stroke-width="1.8" />
+                <path d="M6 7h12M6 11h10M6 15h12" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3>Help Resources</h3>
+            <p>Guides and FAQs for navigating the platform and understanding your rights.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 20l9-5-9-5-9 5 9 5z" stroke-width="1.8" stroke-linejoin="round" />
+                <path d="M12 15V4" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3>Employer &amp; Worker Guidance</h3>
+            <p>Best practices for fair and respectful working relationships.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 22a7 7 0 0 0 7-7V9a7 7 0 0 0-14 0v6a7 7 0 0 0 7 7z" stroke-width="1.8" />
+                <path d="M12 6v6l3 2" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3>Safety Reminders</h3>
+            <p>Regular tips and alerts to help maintain safe work environments.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-cream cta-wrap" id="join">
+      <div class="container">
+        <div class="cta">
+          <div class="eyebrow" style="color:rgba(255,255,255,0.9);"> </div>
+
+          <div style="display:grid;place-items:center;margin-bottom:8px;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M12 2l7 4v7c0 5-3 8-7 9-4-1-7-4-7-9V6l7-4z"
+                stroke="rgba(255,255,255,0.92)"
+                stroke-width="1.8"
+              />
+            </svg>
+          </div>
+
+          <h3>Join AlalayPH Today</h3>
+          <p>
+            Whether you're looking for trusted domestic help or searching for a safe, fair job —
+            AlalayPH is here for you.
+          </p>
+
+          <div class="cta-actions">
+            <a class="btn btn-white" href="#workers">
+              <!-- User / person icon replacing 👤 -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="stroke:rgba(31,58,47,0.8);flex-shrink:0;">
+                <path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10z" stroke-width="1.8"/>
+                <path d="M4 21a8 8 0 0 1 16 0" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              Create Worker Profile
+            </a>
+            <a class="btn btn-outline-white" href="#jobs">
+              <!-- Document / receipt icon replacing 🧾 -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="stroke:#fff;flex-shrink:0;">
+                <path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M9 7h6M9 11h6M9 15h4" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              Post a Job
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="brandline">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
+                <path
+                  d="M12 2l7 4v7c0 5-3 8-7 9-4-1-7-4-7-9V6l7-4z"
+                  stroke="rgba(91,211,155,0.95)"
+                  stroke-width="1.8"
+                />
+              </svg>
+              AlalayPH
+            </div>
+            <p>
+              Trusted Care for Every Corner. Safer hiring for domestic workers and households in the Philippines.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h5>Platform</h5>
+            <a href="#workers">Find Workers</a>
+            <a href="#jobs">Post a Job</a>
+            <a href="#about">How It Works</a>
+            <a href="#join">Pricing</a>
+          </div>
+
+          <div class="footer-col">
+            <h5>Resources</h5>
+            <a href="#training">Training Programs</a>
+            <a href="#safety">Safety Guidelines</a>
+            <a href="#support">Help Center</a>
+            <a href="#support">FAQs</a>
+          </div>
+
+          <div class="footer-col">
+            <h5>Company</h5>
+            <a href="#about">About Us</a>
+            <a href="#support">Contact</a>
+            <a href="#support">Privacy Policy</a>
+            <a href="#support">Terms of Service</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          &copy; 2026 AlalayPH. All rights reserved. Trusted Care for Every Corner.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
