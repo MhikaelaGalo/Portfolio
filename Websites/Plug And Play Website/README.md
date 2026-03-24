@@ -38,4 +38,4 @@ Follow these steps to deploy the Plug and Play modules:
 4.  **Module Integration**: Import the modules into your main entry point. For example:
     * `import { initializeAdmin } from './admin.js';`
 ### ### Username: Ciara
-### ### Paaword: snoopy
+### ### Password: snoopy
