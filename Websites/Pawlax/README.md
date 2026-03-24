@@ -69,6 +69,3 @@ PawLax is designed to provide a "posh and cozy" experience for pet owners. The s
 2.  **View**: Upon logging in, users are redirected to `View_Customer_Schedule.html?paramName=user@email.com`.
 3.  **Manage**: Users can click the ✎ (edit) or 🗑 (delete) icons to manage their records, which triggers AJAX calls to the backend to update the database without refreshing the entire page.
 
----
-
-**Would you like me to generate the CSS files or the PHP backend scripts to make this system fully functional?**
